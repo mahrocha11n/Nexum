@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexum - Meu Painel</title>
+    <link rel="stylesheet" href="css/painel.css">
+</head>
+<body>
+
+    <header class="header-top">
+        <div class="logo-area">
+            <span class="logo-icone">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M7 20h10"/>
+                    <path d="M10 20c5.5-2.5.8-6.4 3-10"/>
+                    <path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"/>
+                    <path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"/>
+                </svg>
+            </span>
+            <h2>Nexum</h2>
+            <span class="header-sub">Painel do Usuário</span>
+        </div>
+        <div class="user-profile">
+            <span class="avatar" id="avatar-letra">U</span>
+            <span class="username" id="user-nome-topo">Carregando...</span>
+            <button type="button" id="btn-sair" class="btn-logout">Sair</button>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <h1 id="titulo-boas-vindas">Olá!</h1>
+        <p class="subtitle">Gerencie abaixo as informações da sua conta.</p>
+        <span class="selo-perfil" id="selo-perfil" hidden></span>
+
+        <form id="form-painel" class="card-form">
+
+            <section class="form-section">
+                <h2 class="section-title-highlight">Dados da conta</h2>
+                <p class="section-desc">Suas informações de acesso na plataforma.</p>
+
+                <div class="input-group">
+                    <label for="edit-nome">Nome / Instituição</label>
+                    <input type="text" id="edit-nome" required>
+                </div>
+
+                <div class="input-group margin-top">
+                    <label for="edit-email">E-mail de acesso</label>
+                    <input type="email" id="edit-email" required>
+                </div>
+            </section>
+
+            <p id="mensagem" class="mensagem" role="alert" hidden></p>
+
+            <div class="acoes">
+                <button type="submit" class="btn-salvar">Salvar alterações</button>
+                <button type="button" id="btn-excluir" class="btn-excluir">Excluir conta</button>
+            </div>
+
+        </form>
+    </main>
+
+    <script src="js/painel.js" defer></script>
+</body>
+</html>

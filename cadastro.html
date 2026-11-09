@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexum - Cadastro de Usuário</title>
+    <link rel="stylesheet" href="css/cadastro.css">
+</head>
+<body>
+
+    <header class="header-top">
+        <div class="logo-area">
+            <img src="LogoNexumSemFundo.png" alt="Logo Nexum" class="logo-img">
+            <h2>Nexum</h2>
+            <span class="header-sub">Portal de Cadastro</span>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <h1>Bem-vindo ao Nexum!</h1>
+        <p class="subtitle">Selecione seu perfil e preencha seus dados para criar sua conta!</p>
+
+        <form id="form-cadastro" class="card-form" onsubmit="salvarCadastro(event)">
+            
+            <!-- selecionar o PERFIL -->
+            <section class="form-section">
+                <h2 class="section-title-highlight">1. Selecione seu perfil</h2>
+                <p class="section-desc">Escolha qual tipo de usuário você é na plataforma:</p>
+
+                <div class="radio-grid-perfil">
+                    <label class="btn-perfil" onclick="mudarPerfil('aluno', this)">
+                        <input type="radio" name="perfil" value="aluno" required>
+                        <span class="perfil-icon">🎓</span>
+                        <strong>Estudante</strong>
+                    </label>
+
+                    <label class="btn-perfil" onclick="mudarPerfil('professor', this)">
+                        <input type="radio" name="perfil" value="professor">
+                        <span class="perfil-icon">👨‍🏫</span>
+                        <strong>Professor</strong>
+                    </label>
+
+                    <label class="btn-perfil" onclick="mudarPerfil('cursinho', this)">
+                        <input type="radio" name="perfil" value="cursinho">
+                        <span class="perfil-icon">🏛️</span>
+                        <strong>Cursinho / Escola Parceira</strong>
+                    </label>
+                </div>
+            </section>
+
+            <section class="form-section">
+                <h2 class="section-title-highlight">2. Dados da conta</h2>
+                
+                <div class="input-group">
+                    <label for="nome">Nome Completo</label>
+                    <input type="text" id="nome" placeholder="Digite seu nome completo" required>
+                </div>
+
+                <div class="input-group margin-top">
+                    <label for="email">E-mail de Acesso</label>
+                    <input type="email" id="email" placeholder="seuemail@exemplo.com" required>
+                </div>
+
+                <div class="input-group margin-top">
+                    <label for="senha">Senha</label>
+                    <input type="password" id="senha" placeholder="Crie uma senha segura" required minlength="6">
+                </div>
+            </section>
+
+            
+            <!-- Bloco Exclusivo do ALUNO (Configuração de Rotina) -->
+            <section id="bloco-rotina-estudante" class="form-section bloco-dinamico" style="display: none;">
+                <h2 class="section-title-highlight">3. Configuração de rotina</h2>
+                <p class="section-desc">Exclusivo para estudantes: defina seu foco e disponibilidade semanal.</p>
+
+                <div class="sub-card">
+                    <label class="label-sub-titulo">Qual é o seu objetivo?</label>
+                    <div class="radio-options">
+                        <label class="btn-radio" onclick="selecionarVestibular('ENEM', this)">
+                            <input type="radio" name="objetivo" value="ENEM"> <span class="radio-icon">◯</span> ENEM
+                        </label>
+                        <label class="btn-radio" onclick="selecionarVestibular('FUVEST', this)">
+                            <input type="radio" name="objetivo" value="FUVEST"> <span class="radio-icon">◯</span> FUVEST
+                        </label>
+                        <label class="btn-radio" onclick="selecionarVestibular('UNICAMP', this)">
+                            <input type="radio" name="objetivo" value="UNICAMP"> <span class="radio-icon">◯</span> UNICAMP
+                        </label>
+                    </div>
+
+                    <div id="info-vestibular" class="info-box" style="display: none;">
+                        <span id="info-titulo">📅 <strong>Data oficial da prova</strong></span>
+                        <span class="badge-status">🔸 Aguardando divulgação oficial</span>
+                    </div>
+                </div>
+
+                <div class="sub-card margin-top">
+                    <div class="input-group">
+                        <label for="dataLimite">Até quando você quer concluir os estudos? (Prazo pessoal)</label>
+                        <input type="date" id="dataLimite" value="2027-09-30">
+                    </div>
+                </div>
+
+                <div class="sub-card margin-top">
+                    <div class="input-group">
+                        <label for="horasDisponiveis">Quantas horas você tem para estudar por semana?</label>
+                        <div class="input-suffix">
+                            <input type="number" id="horasDisponiveis" placeholder="Ex: 14" min="1" max="168">
+                            <span>horas / semana</span>
+                        </div>
+                        <small>Como sua rotina diária varia, informe o total acumulado na semana.</small>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Bloco Exclusivo do user PROFESSOR (Formação e Disciplinas) -->
+            <section id="bloco-dados-professor" class="form-section bloco-dinamico" style="display: none;">
+                <h2 class="section-title-highlight">3. Informações profissionais</h2>
+                <p class="section-desc">Detalhes da sua atuação como docente na plataforma.</p>
+
+                <div class="input-group">
+                    <label for="formacaoProfessor">Formação Acadêmica</label>
+                    <input type="text" id="formacaoProfessor" placeholder="Ex: Licenciatura em Matemática - USP">
+                </div>
+
+                <div class="input-group margin-top">
+                    <label for="disciplinasProfessor">Disciplinas Lecionadas</label>
+                    <input type="text" id="disciplinasProfessor" placeholder="Ex: Matemática, Física, Redação">
+                    <small>Separe as disciplinas por vírgula.</small>
+                </div>
+            </section>
+
+            <!-- Bloco Exclusivo dos cursinhos (Dados da Instituição) -->
+            <section id="bloco-dados-cursinho" class="form-section bloco-dinamico" style="display: none;">
+                <h2 class="section-title-highlight">3. Informações da Instituição</h2>
+                <p class="section-desc">Dados básicos do cursinho ou escola parceira.</p>
+
+                <div class="input-group">
+                    <label for="nomeInstituicao">Nome da Instituição</label>
+                    <input type="text" id="nomeInstituicao" placeholder="Ex: Cursinho Popular Conhecimento Para Todos">
+                </div>
+
+                <div class="input-group margin-top">
+                    <label for="cnpjInstituicao">CNPJ da Instituição</label>
+                    <input type="text" id="cnpjInstituicao" placeholder="00.000.000/0001-00">
+                </div>
+            </section>
+
+            <button type="submit" class="btn-salvar">Finalizar Cadastro →</button>
+        </form>
+    </main>
+
+    <script src="js/cadastro.js"></script>
+</body>
+</html>

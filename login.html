@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrar | Nexum</title>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+
+    <header class="topo">
+        <a class="marca" href="login.html">
+            <span class="marca-icone">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M7 20h10"/>
+                    <path d="M10 20c5.5-2.5.8-6.4 3-10"/>
+                    <path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"/>
+                    <path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"/>
+                </svg>
+            </span>
+            <span>Nexum</span>
+        </a>
+        <p class="ajuda">Precisa de ajuda? <a href="#">Fale com a gente</a></p>
+    </header>
+
+    <main class="pagina">
+
+        <section class="apresentacao">
+            <span class="etiqueta">Conexões que transformam</span>
+            <h2>Seu futuro começa com o próximo <span class="destaque">aprendizado.</span></h2>
+            <p class="subtitulo">Um só lugar para aprender, ensinar e construir novas possibilidades. Vamos juntos?</p>
+
+            <div class="vitrine">
+                <div class="vitrine-logo">
+                    <svg viewBox="0 0 24 24" width="56" height="56" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M7 20h10"/>
+                        <path d="M10 20c5.5-2.5.8-6.4 3-10"/>
+                        <path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"/>
+                        <path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"/>
+                    </svg>
+                </div>
+                <span class="vitrine-frase">Cada conexão abre um novo caminho</span>
+            </div>
+
+            <h3 class="perfis-titulo">Um espaço para cada jornada</h3>
+            <ul class="perfis">
+                <li>🎓 Aluno Free</li>
+                <li class="perfil-destaque">⭐ Aluno Premium</li>
+                <li>🏫 Cursinho / Escola Parceira</li>
+                <li>💻 Professor Particular / Mentor</li>
+            </ul>
+        </section>
+
+        <section class="login">
+            <h1>Que bom ter você aqui.</h1>
+            <p>Entre na sua conta e continue sua jornada.</p>
+
+            <form id="form-login">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" placeholder="Digite seu e-mail" autocomplete="email" required>
+
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" name="senha" placeholder="Digite sua senha" autocomplete="current-password" required>
+
+                <div class="linha-opcoes">
+                    <label class="lembrar">
+                        <input type="checkbox" id="lembrar" name="lembrar">
+                        Lembrar de mim
+                    </label>
+                    <a href="#">Esqueci minha senha</a>
+                </div>
+
+                <p id="mensagem" class="mensagem" role="alert" hidden></p>
+
+                <button type="submit">Entrar na plataforma</button>
+            </form>
+
+            <div class="cadastro">
+                <p>Ainda não faz parte da Nexum?</p>
+                <a class="botao-sec" href="cadastro.html">Criar minha conta</a>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="js/login.js" defer></script>
+</body>
+</html>
