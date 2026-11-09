@@ -1,0 +1,245 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: #f4f6fa;
+  color: #333;
+}
+
+.header-top {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 14px 40px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-img {
+  width: 32px;
+  height: 32px;
+}
+
+.header-sub {
+  color: #6b7280;
+  font-size: 14px;
+  border-left: 1px solid #e5e7eb;
+  padding-left: 10px;
+  margin-left: 5px;
+}
+
+.main-container {
+  max-width: 760px;
+  margin: 30px auto;
+  padding: 0 20px 60px 20px;
+}
+
+h1 {
+  font-size: 24px;
+  color: #111827;
+  margin-bottom: 4px;
+}
+
+.subtitle {
+  color: #6b7280;
+  font-size: 14px;
+  margin-bottom: 25px;
+}
+
+.card-form {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 30px;
+}
+
+.form-section {
+  margin-bottom: 28px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.section-title-highlight {
+  font-size: 17px;
+  color: #1f2937;
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+
+.section-desc {
+  font-size: 13px;
+  color: #6b7280;
+  margin-bottom: 14px;
+}
+
+.radio-grid-perfil {
+  display: flex;
+  gap: 12px;
+}
+
+.btn-perfil {
+  flex: 1;
+  border: 1px solid #d1d5db;
+  background-color: #ffffff;
+  padding: 16px 10px;
+  text-align: center;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #4b5563;
+  transition: all 0.2s;
+  user-select: none;
+}
+
+.btn-perfil input {
+  display: none;
+}
+
+.perfil-icon {
+  font-size: 22px;
+}
+
+.btn-perfil.active {
+  border-color: #6366f1;
+  color: #6366f1;
+  background-color: #f5f3ff;
+}
+
+.sub-card {
+  background-color: #fafafa;
+  border: 1px solid #e5e7eb;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.label-sub-titulo {
+  display: block;
+  font-size: 12px;
+  font-weight: bold;
+  color: #374151;
+  margin-bottom: 10px;
+}
+
+.radio-options {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-radio {
+  flex: 1;
+  border: 1px solid #d1d5db;
+  background-color: #ffffff;
+  padding: 10px;
+  text-align: center;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: bold;
+  color: #4b5563;
+  transition: all 0.2s;
+  user-select: none;
+}
+
+.btn-radio input {
+  display: none;
+}
+
+.btn-radio.active {
+  border-color: #6366f1;
+  color: #6366f1;
+  background-color: #f5f3ff;
+}
+/* pra aquela parte de selecionar os vestibulares */
+.btn-radio.active .radio-icon {
+  color: #6366f1; 
+  font-weight: bold;
+}
+
+.info-box {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  padding: 10px;
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+.badge-status {
+  background-color: #fff7ed;
+  color: #c2410c;
+  padding: 2px 6px;
+  border-radius: 10px;
+  font-size: 10px;
+  margin-left: 6px;
+}
+
+.input-group label {
+  display: block;
+  font-size: 12px;
+  font-weight: bold;
+  color: #374151;
+  margin-bottom: 6px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: #ffffff;
+}
+
+.input-group small {
+  display: block;
+  color: #9ca3af;
+  font-size: 11px;
+  margin-top: 5px;
+}
+
+.input-suffix {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-suffix span {
+  position: absolute;
+  right: 12px;
+  color: #9ca3af;
+  font-size: 13px;
+}
+
+.margin-top {
+  margin-top: 14px;
+}
+
+.btn-salvar {
+  width: 100%;
+  background-color: #6366f1;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 15px;
+  transition: background-color 0.2s;
+}
+
+.btn-salvar:hover {
+  background-color: #4f46e5;
+}

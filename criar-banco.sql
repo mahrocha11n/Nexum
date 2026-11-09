@@ -1,0 +1,19 @@
+CREATE USER nexum IDENTIFIED BY "Nexum2026"
+    DEFAULT TABLESPACE USERS
+    QUOTA UNLIMITED ON USERS;
+
+GRANT CREATE SESSION, CREATE TABLE, CREATE SEQUENCE, CREATE VIEW TO nexum;
+
+CREATE TABLE usuarios (
+    id            NUMBER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    nome          VARCHAR2(100)  NOT NULL,
+    email         VARCHAR2(150)  NOT NULL,
+    senha_hash    VARCHAR2(255)  NOT NULL,
+    perfil        VARCHAR2(30)   NOT NULL,
+    ativo         NUMBER(1)      DEFAULT 1 NOT NULL,
+    data_criacao  TIMESTAMP      DEFAULT SYSTIMESTAMP NOT NULL,
+    CONSTRAINT uq_usuarios_email  UNIQUE (email),
+    CONSTRAINT ck_usuarios_perfil CHECK (perfil IN
+        ('ALUNO_FREE', 'ALUNO_PREMIUM', 'CURSINHO', 'PROFESSOR')),
+    CONSTRAINT ck_usuarios_ativo  CHECK (ativo IN (0, 1))
+);
