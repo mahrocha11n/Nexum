@@ -123,7 +123,7 @@ async function salvarCadastro(event) {
 
         if (resposta.ok) {
             mostrarMensagem('Conta criada com sucesso! Redirecionando para o login...', true);
-            setTimeout(() => { window.location.href = 'login.html'; }, 1500);
+            setTimeout(() => { window.location.href = 'index.html'; }, 1500);
         } else {
             mostrarMensagem(corpo.mensagem, false);
         }
