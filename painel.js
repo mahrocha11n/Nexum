@@ -45,7 +45,7 @@ async function carregarPainelUsuario() {
         const resposta = await fetch(`${API}/me`, { credentials: 'include' });
 
         if (!resposta.ok) {
-            window.location.href = 'login.html';
+            window.location.href = 'index.html';
             return;
         }
 
@@ -74,7 +74,7 @@ async function salvarEdicao(evento) {
         });
 
         if (resposta.status === 401) {
-            window.location.href = 'login.html';
+            window.location.href = 'index.html';
             return;
         }
 
@@ -108,7 +108,7 @@ async function deletarConta() {
         });
 
         if (resposta.ok || resposta.status === 401) {
-            window.location.href = 'login.html';
+            window.location.href = 'index.html';
             return;
         }
 
@@ -124,7 +124,7 @@ async function sairDoPainel() {
     try {
         await fetch(`${API}/logout`, { method: 'POST', credentials: 'include' });
     } finally {
-        window.location.href = 'login.html';
+        window.location.href = 'index.html';
     }
 }
 
